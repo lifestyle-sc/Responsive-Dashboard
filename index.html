@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Material Icons Cdn link -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>UniShop | Admin Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Aside section -->
+      <aside id="aside">
+        <div class="top">
+          <a href="#" class="logo">
+            <span class="material-icons-sharp"> storefront </span>
+            <h2>UniShop</h2>
+          </a>
+            <button id="close-btn" class="close">
+              <span class="material-icons-sharp"> close </span>
+            </button>
+        </div>
+
+        <div class="menu">
+          <a href="#" class="menu-items active">
+            <span class="material-icons-sharp"> grid_view </span>
+            <h4>Dashboard</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> people </span>
+            <h4>Customers</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> receipt_long </span>
+            <h4>Orders</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> trending_up </span>
+            <h4>Analytics</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> email </span>
+            <h4>Messages</h4>
+            <span class="message-count">30</span>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> inventory </span>
+            <h4>Products</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> report_gmailerrorred </span>
+            <h4>Reports</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> settings </span>
+            <h4>Settings</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> add </span>
+            <h4>Add Product</h4>
+          </a>
+
+          <a href="#" class="menu-items">
+            <span class="material-icons-sharp"> logout </span>
+            <h4>Logout</h4>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main section -->
+      <main id="main">
+        <!-- top main -->
+        <div class="top">
+          <h2>Dashboard</h2>
+          <div class="date">
+            <input type="date" id="date" />
+          </div>
+        </div>
+
+        <!-- insights -->
+
+        <div class="main-section-2">
+          <div class="sales">
+            <div class="left">
+              <h2>$134,400</h2>
+              <p class="text-muted">Total Sales</p>
+            </div>
+            <div class="right">
+              <svg>
+                <circle cx="28" cy="28" r="26"></circle>
+              </svg>
+              <div class="number">85%</div>
+            </div>
+          </div>
+
+          <div class="expenses">
+            <div class="left">
+              <h2>$202,300</h2>
+              <p class="text-muted">Total Expenses</p>
+            </div>
+            <div class="right">
+              <svg>
+                <circle cx="28" cy="28" r="26"></circle>
+              </svg>
+              <div class="number">67%</div>
+            </div>
+          </div>
+
+          <div class="profit">
+            <div class="left">
+              <h2>$125,240</h2>
+              <p class="text-muted">Total Profit</p>
+            </div>
+            <div class="right">
+              <svg>
+                <circle cx="28" cy="28" r="26"></circle>
+              </svg>
+              <div class="number">50%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- revenues chart -->
+
+        <div class="revenue">
+          <div class="top">
+            <h3>Revenue</h3>
+            <ul>
+              <li><a href="#">Day</a></li>
+              <li><a href="#">Month</a></li>
+              <li><a href="#" class="active-revenue">Year</a></li>
+            </ul>
+          </div>
+
+          <hr class="horizontal-line" />
+
+          <div class="middle">
+            <canvas id="my-chart"></canvas>
+          </div>
+        </div>
+      </main>
+
+      <!-- Section -->
+      <section id="section">
+        <div class="top">
+          <button id="menu-btn" class="left">
+            <span class="material-icons-sharp">
+              menu
+              </span>
+          </button>
+          <div class="right">
+            <div class="theme">
+              <span class="material-icons-sharp active-mode">
+                light_mode
+                </span>
+                <span class="material-icons-sharp">
+                  dark_mode
+                  </span>
+            </div>
+            <div class="profile">
+              <div class="profile-name">
+                <h3><span class="text-muted">Hey, </span>Oluwakayode</h3>
+                <p class="text-muted">Admin</p>
+              </div>
+              <img src="./img/portrait/blackBoy.jpg" alt="admin" class="profile-pic">
+            </div>
+          </div>
+        </div>
+
+        <!-- recent activity -->
+        <div class="recent-activity">
+          <h3>Recent Activity</h3>
+          <div class="activities">
+            <ul>
+              <li>
+                <img src="./img/portrait/ceo.jpg" alt="ceo" class="profile-pic">
+                <div class="activity">
+                  <h4>John Doe <span class="text-muted">added 13 variant of M1 GPU for the latest series of Tech Today</span></h4>
+                  <p class="text-muted">2 Minutes Ago</p>
+                </div>
+              </li>
+
+              <li>
+                <img src="./img/portrait/whiteGirl.jpg" alt="client-1" class="profile-pic">
+                <div class="activity">
+                  <h4>Ademiye Tolu <span class="text-muted">purchased the Out of Order for the figma evolution plugin</span></h4>
+                  <p class="text-muted">30 Minutes Ago</p>
+                </div>
+              </li>
+
+              <li>
+                <img src="./img/portrait/blackGirl.jpg" alt="client-2" class="profile-pic">
+                <div class="activity">
+                  <h4>Kazumaki Fisachi <span class="text-muted">returned Let you be me, the latest model of the next evolution of AI</span></h4>
+                  <p class="text-muted">1 Hour Ago</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- sales analytics -->
+        <div class="sales-analytics">
+          <h3>Sales Analytics</h3>
+          <div class="analysis">
+            <ul>
+              <li>
+                <span class="material-icons-sharp bg-warning text-light border-half padding-1">
+                  shopping_cart
+                  </span>
+                  <span>
+                    <h5>Online Orders</h5>
+                    <p class="text-muted">Last 24 Hours</p>
+                  </span>
+                  <h6 class="text-success">+45%</h6>
+                  <h6>3200</h6>
+              </li>
+            </ul>
+          </div>
+
+          <div class="analysis">
+            <ul>
+              <li>
+                <span class="material-icons-sharp bg-danger text-light border-half padding-1">
+                  local_mall
+                  </span>
+                  <span>
+                    <h5>Offline Orders</h5>
+                    <p class="text-muted">Last 24 Hours</p>
+                  </span>
+                  <h6 class="text-danger">-23%</h6>
+                  <h6>1530</h6>
+              </li>
+            </ul>
+          </div>
+
+          <div class="analysis">
+            <ul>
+              <li>
+                <span class="material-icons-sharp bg-primary text-light border-half padding-1">
+                  person
+                  </span>
+                  <span>
+                    <h5>New Customers</h5>
+                    <p class="text-muted">Last 24 Hours</p>
+                  </span>
+                  <h6 class="text-success">+18%</h6>
+                  <h6>640</h6>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ADD BTN -->
+        <button class="add-product"><span class="material-icons-sharp">
+          add
+          </span>Add Product</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Chart js cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+      integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Main app -->
+    <script src="/app.js"></script>
+  </body>
+</html>

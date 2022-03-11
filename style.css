@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #18a999;
+  --primary-light: rgba(187, 223, 219, 1);
+  --primary-dark: #1B1C20;
+  --secondary-color: #8af3ff;
+  --bg-light: #f7f0f0;
+  --bg-dark: #413d42;
+  --bg-success: #109648;
+  --bg-danger: #ce2d2d;
+  --bg-warning: #e69617;
+  --color-dark: #484349;
+  --color-light: #a09a9d;
+  --text-muted-color: #a09a9d;
+  --color-light-variant: rgb(241, 241, 241);
+  --color-light-2: rgb(226, 219, 220);
+
+  --shadow-color: rgba(132, 139, 200, 0.18);
+  --box-shadow: 0 2rem 3rem var(--shadow-color);
+
+  --card-border-radius: 2rem;
+  --card-padding: 1.8rem;
+
+  --padding-1: 0.44rem;
+  --padding-2: 0.88rem;
+  --padding-3: 1.22rem;
+
+  --margin-1: 0.44rem;
+  --margin-2: 0.88rem;
+  --margin-3: 1.22rem;
+
+  --border-radius-1: 0.44rem;
+  --border-radius-2: 0.88rem;
+  --border-radius-3: 1.22rem;
+}
+
+/* formatting styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* utilities */
+
+/* dark theme variables */
+.dark-theme-variables{
+  --primary-light: #1B403F;
+  --primary-dark: #F7F0F0;
+  --bg-light: #181a1e;
+  --color-light-variant: #202528;
+  --color-dark: #edeffd;
+  --color-light: #F7F0F0;
+  --bg-dark: #a3bdcc;
+  --color-light-2: #1B1C20;
+  --box-shadow: 0 2rem 3rem var(--shadow-light)
+}
+
+a {
+  color: var(--color-dark);
+}
+
+.border-half {
+  border-radius: 50%;
+}
+
+.padding-1 {
+  padding: var(--padding-1);
+}
+
+.padding-2 {
+  padding: var(--padding-2);
+}
+
+.padding-3 {
+  padding: var(--padding-3);
+}
+
+.bg-primary {
+  background: var(--primary-color);
+}
+
+.bg-success {
+  background: var(--bg-success);
+}
+
+.bg-danger {
+  background: var(--bg-danger);
+}
+
+.bg-warning {
+  background: var(--bg-warning);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-success {
+  color: var(--bg-success);
+}
+
+.text-danger {
+  color: var(--bg-danger);
+}
+
+.text-warning {
+  color: var(--bg-warning);
+}
+
+.text-light {
+  color: var(--bg-light);
+}
+
+.active {
+  border-left: 0.44rem solid var(--primary-color);
+  background: var(--primary-light);
+  color: var(--color-dark) !important;
+}
+
+.active-revenue {
+  color: var(--primary-color) !important;
+}
+
+.active-mode {
+  background: var(--primary-color);
+  color: var(--bg-light);
+}
+
+.text-muted {
+  color: var(--text-muted-color);
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.horizontal-line {
+  width: 98%;
+  height: 1px;
+  background: var(--color-light-2);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  margin: auto;
+  overflow-x: hidden;
+  background: var(--bg-light);
+  color: var(--primary-dark);
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  padding: var(--padding-1);
+  grid-template-columns: 14rem auto 23rem;
+}
+
+/* aside styles */
+.aside {
+  height: 100%;
+}
+
+#aside .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-1);
+  margin-bottom: var(--margin-2);
+}
+
+#aside .top .logo {
+  display: flex;
+  color: var(--primary-color);
+  transition: all 400ms ease-in;
+}
+
+#aside .top .logo:hover {
+  transform: scale(1.2);
+  padding: var(--padding-1);
+}
+
+#aside .top .close {
+  display: none;
+  background: transparent;
+  color: var(--color-dark);
+}
+
+#aside .menu {
+  padding: var(--padding-2);
+}
+
+#aside .menu .menu-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.2rem;
+  color: var(--color-light);
+  padding: var(--padding-1);
+  font-size: 12px;
+  transition: all 400ms ease;
+}
+
+#aside .menu .menu-items:hover {
+  background: var(--primary-light);
+  color: var(--color-dark);
+  margin-left: -0.34rem;
+}
+
+#aside .menu .menu-items:last-child {
+  position: absolute;
+  bottom: 3rem;
+}
+
+#aside .menu .menu-items:last-child:hover {
+  color: var(--color-dark);
+  background: none;
+}
+
+#aside .menu .menu-items .message-count {
+  padding: 5px;
+  background: var(--bg-danger);
+  border-radius: var(--border-radius-2);
+  /* color: var(--bg-light); */
+  opacity: 0.8;
+  font-size: 10px;
+}
+
+/* main styles */
+#main {
+  margin-top: var(--margin-1);
+}
+
+#main > .top {
+  margin-bottom: var(--margin-2);
+  padding: var(--padding-1);
+}
+
+#main .top h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: var(--margin-1);
+}
+
+#main .top .date {
+  display: inline-block;
+  background: var(--primary-light);
+  padding: 0.5rem 1.6rem;
+  border-radius: var(--border-radius-1);
+}
+
+#main .top .date input[type='date'] {
+  color: var(--color-dark);
+  background: transparent;
+}
+
+#main .main-section-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+
+#main .main-section-2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-light-variant);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-2);
+  padding: var(--padding-2);
+  transition: all 400ms ease;
+}
+
+#main .main-section-2 > div:hover {
+  box-shadow: none;
+}
+
+#main .main-section-2 > div .left {
+  padding-right: var(--padding-3);
+}
+
+#main .main-section-2 > div .left h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--margin-1);
+}
+
+#main .main-section-2 > div .left p {
+  font-size: 0.78rem;
+}
+
+#main .main-section-2 > div .right {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#main .main-section-2 > div .right svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+#main .main-section-2 > div .right svg circle {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+#main .main-section-2 .sales svg circle {
+  stroke: var(--bg-warning);
+  stroke-dasharray: 200;
+  stroke-dashoffset: -30;
+}
+
+#main .main-section-2 .expenses svg circle {
+  stroke: var(--bg-danger);
+  stroke-dasharray: 100;
+  stroke-dashoffset: -50;
+}
+
+#main .main-section-2 .profit svg circle {
+  stroke: var(--primary-color);
+  stroke-dasharray: 80;
+  stroke-dashoffset: -50;
+}
+
+#main .main-section-2 > div .right .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+}
+
+#main .revenue {
+  padding: var(--padding-2);
+  margin-top: var(--margin-2);
+  background: var(--color-light-variant);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-2);
+  transition: all 400ms ease;
+}
+
+#main .revenue:hover {
+  box-shadow: none;
+}
+
+#main .revenue > .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--margin-1);
+}
+
+#main .revenue .top h3 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+#main .revenue .top ul {
+  display: flex;
+  align-items: center;
+}
+
+#main .revenue .top ul li {
+  border: 1px solid var(--color-light-2);
+  border-right: 0;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+#main .revenue .top ul li:last-child {
+  border-right: 1px solid var(--color-light-2);
+}
+#main .revenue .top ul li a {
+  color: var(--color-light);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+#main .revenue .middle {
+  height: 300px;
+}
+
+/* section styles */
+#section {
+  margin-top: var(--margin-1);
+  padding: var(--padding-2);
+}
+
+#section .top {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: end;
+}
+
+#section .top .left {
+  display: none;
+  background: transparent;
+  color: var(--color-dark);
+}
+
+#section .top .right {
+  display: flex;
+  align-items: center;
+  gap: 1.66rem;
+}
+
+#section > .top .right .theme {
+  background: var(--primary-light);
+  color: var(--bg-dark);
+  border-radius: var(--border-radius-1);
+}
+
+#section .top .right .theme > span {
+  cursor: pointer;
+  padding: var(--padding-1);
+  border-radius: var(--border-radius-1);
+  font-size: 1rem;
+}
+
+#section .top .right .profile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: right;
+}
+
+#section .top .right .profile .profile-name h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+#section .top .right .profile .profile-name p {
+  font-size: 0.7rem;
+}
+
+#section .recent-activity {
+  padding: var(--padding-1);
+}
+
+#section .recent-activity h3 {
+  padding: var(--padding-1);
+}
+
+#section .recent-activity .activities {
+  background: var(--color-light-variant);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+  padding: var(--padding-2);
+  transition: all 400ms ease;
+}
+
+#section .recent-activity .activities:hover {
+  box-shadow: none;
+}
+
+#section .recent-activity .activities ul li {
+  display: grid;
+  grid-template-columns: 2.6rem auto;
+  gap: 1rem;
+  margin-bottom: var(--margin-2);
+}
+
+#section .recent-activity .activities ul li .activity h4{
+  margin-bottom: var(--margin-1);
+}
+
+#section .recent-activity .activities ul li .activity p {
+  font-size: 0.5rem;
+}
+
+#section .sales-analytics {
+  padding: var(--padding-1);
+}
+
+#section .sales-analytics h3 {
+  padding: var(--padding-1);
+}
+
+#section .sales-analytics .analysis {
+  background: var(--color-light-variant);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+  padding: var(--padding-1);
+  margin-bottom: var(--margin-1);
+  transition: all 400ms ease;
+}
+
+#section .sales-analytics .analysis:hover {
+  box-shadow: none;
+}
+
+#section .sales-analytics .analysis ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#section .sales-analytics .analysis ul li span p {
+  font-size: 0.6rem;
+}
+
+#section .sales-analytics .add-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  border-radius: var(--border-radius-2);
+  border: 2px var(--primary-color) dashed;
+  padding: var(--padding-1);
+  transition: all 400ms ease;
+  cursor: pointer;
+}
+
+#section .sales-analytics .add-product:hover {
+  background: var(--primary-color);
+  color: var(--primary-dark);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1000px) {
+  body {
+    /* background: red; */
+    height: 100%;
+  }
+  .container {
+    max-width: 1000px;
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+
+  #aside .top .logo h2 {
+    display: none;
+  }
+
+  #aside .top .logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #aside .top .logo span{
+    font-size: 2.2rem;
+  }
+
+  #aside .menu .menu-items {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  #aside .menu .menu-items a {
+    width: 5.5rem;
+  }
+
+  #aside .menu .menu-items h4 {
+    display: none;
+  }
+
+  #aside .menu .menu-items:last-child {
+    position: relative;
+    bottom: 0;
+    margin-top: 1.6rem;
+  }
+
+  #main {
+    margin-top: 4rem;
+  }
+
+  #main .main-section-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #main .revenue {
+    margin-top: 8rem;
+    width: 80vw;
+    height: 48vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-48%);
+  }
+
+  #main .revenue .middle {
+    position: relative;
+    width: 78vw;
+    height: 40vh;
+  }
+}
+
+/* media queries for mobiles */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  #aside {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 14rem;
+    height: 100%;
+    z-index: 3;
+    background: var(--color-light-variant);
+    box-shadow: 1rem 3rem 4rem var(--color-light-2);
+    animation: showMenu 400ms ease forwards;
+  }
+
+  @keyframes showMenu {
+    to{
+      left: 0;
+    }    
+  }
+
+  #aside .top .logo {
+    width: 50%;
+    margin-left: 1rem;
+  }
+  #aside .top .logo h2 {
+    display: inline;
+  }
+
+  #aside .top .close {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #aside .menu .menu-items {
+    justify-content: start;
+    margin-left: 1.2rem;
+  }
+
+  #aside .menu .menu-items a {
+    width: 100%;
+    height: 3.4rem;
+  }
+
+  #aside .menu .menu-items h4 {
+    display: inline-block;
+  }
+
+  #aside .menu .menu-items:last-child {
+    position: absolute;
+    bottom: 3rem;
+  }
+
+  #main {
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+
+  #main .revenue {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    margin: 3rem 0 0 0;
+    transform: translateX(-50%);
+  }
+
+  #main .revenue .middle {
+    position: relative;
+    width: 100%;
+    height: 43vh;
+  }
+
+  #section {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+
+  #section .top {
+    position: fixed;
+    width: 100%;
+    height: 4.2rem;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: var(--color-light-variant);
+    box-shadow: 0 1rem 1.5em var(--color-light-2);
+    align-items: center;
+    padding: 0 0.8rem;
+  }
+
+  #section .top .right{
+    gap: 1.3rem;
+  }
+
+  #section > .top .right .theme {
+    /* width: 4.4rem; */
+    position: absolute;
+    left: 63%;
+  }
+
+  #section .top .right .profile .profile-name {
+    display: none;
+  }
+
+  #section .top .left {
+    position: absolute;
+    left: 1rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #section .top .left span {
+    font-size: 2rem;
+  }
+}
